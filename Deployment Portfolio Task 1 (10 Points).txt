@@ -1,0 +1,499 @@
+3/19/26, 11:21 AM
+
+Deployment Portfolio Task 1 (10 Points)
+
+Deployment Portfolio Task 1 (10 Points)
+Start Assignment
+Due Tuesday by 23:59
+Points 10
+Submitting a file upload
+Attempts 0
+Allowed attempts 3
+Available 2 Mar at 0:00 - 26 Mar at 23:59
+
+Deployment Activity 1
+You should perform tasks that will, in total, provide a potential of 10 marks.
+Submit your Task 1 only (Don't submit other tasks here)
+
+Task 1. Desktop deployment using Electron
+7.5 marks individual Task
+
+Prerequisites & Setup
+Before starting, ensure you have the following installed:
+js (v18 or later) - https://nodejs.org
+npm (comes with Node.js) or yarn
+Git - https://git-scm.com
+A code editor such as Visual Studio Code - https://code.visualstudio.com
+A GitHub account - https://github.com (required for Distinction and HD levels)
+Useful references:
+Electron documentation: https://www.electronjs.org/docs
+electron-react-boilerplate: https://electron-react-boilerplate.js.org
+electron-builder (packaging): https://www.electron.build
+electron-updater (auto-update): https://www.electron.build/auto-update
+
+Task Description
+Task 1.1 - Pass
+Set up a basic Electron + React development environment and deploy a working desktop application:
+Install Node.js, npm, and Git on your machine
+Scaffold a new Electron + React project using electron-react-boilerplate or Vite + Electron
+Run the app in development mode and confirm it launches as a desktop window
+https://swinburnesarawak.instructure.com/courses/2068/assignments/37515?module_item_id=189092
+
+1/5
+
+3/19/26, 11:21 AM
+
+Deployment Portfolio Task 1 (10 Points)
+
+Build and package the app into a platform installer (e.g. .exe on Windows, .dmg on Mac)
+Provide screenshots of the running app and the generated installer file
+
+Task 1.2 - Credit
+Complete Task 1.1 and build your own custom React + Electron application:
+Design and develop a simple but original React UI (e.g. a to-do app, calculator, note-taking tool,
+or weather dashboard)
+Ensure the app uses at least one React component with state management (useState or
+useReducer)
+Package the app as a distributable installer using electron-builder
+Include an app icon and a custom application name in the build configuration
+Demonstrate the installed app running on your machine with screenshots
+
+Task 1.3 - Distinction
+Complete Task 1.2 and publish your application as a GitHub Release:
+Refactor your app to use multiple React components and at least one external npm dependency
+(e.g. axios, chart.js, date-fns)
+Configure electron-builder to produce release artifacts (installer + unpacked build)
+Create a GitHub repository for your project and tag a versioned release (e.g. v1.0.0)
+Upload the packaged installer(s) as assets to the GitHub Release
+Provide a link to the public GitHub Release and screenshots of the release page
+
+Task 1.4 - High Distinction
+Complete Task 1.3 and implement in-app auto-update functionality using electron-updater:
+Integrate the electron-updater package into your Electron main process
+Configure electron-builder to publish releases to GitHub (provider: github in electron-builder
+config)
+Implement update checking on app start - notify the user when an update is available
+Release a v1.0.0 and a v1.1.0 (with a visible change) to GitHub Releases
+Demonstrate the auto-update flow: app running on v1.0.0 detects and installs v1.1.0
+Provide screenshots or a screen recording showing the full update lifecycle
+Each task has a marking rubric that includes the minimum requirements needed to achieve the
+equivalent of Pass, Credit, Distinction, or HD grades (for the task).
+To attempt a high grade for a task, students must complete all of the lower level sub-tasks leading up
+to that level.
+Students may choose to attempt high grades for some small tasks but just a pass grade for larger
+tasks.
+The final result for the portfolio will be the sum of the grades for each task.
+
+https://swinburnesarawak.instructure.com/courses/2068/assignments/37515?module_item_id=189092
+
+2/5
+
+3/19/26, 11:21 AM
+
+Deployment Portfolio Task 1 (10 Points)
+
+Submit a report including what you did and screenshots providing evidence of this. The report must
+include a publicly accessible IP address/URL for verification. Submit the report through the canvas
+Assignment portal.
+The “due dates” in the Canvas Assignment portal are intended to help you pace yourself. Any late
+deductions identified by Canvas(for deployment tasks) will be included in your final mark. For
+suggested, “due dates” for each task see the unit outline.
+Submission Instructions:
+Deployment Reports:
+For each deployment task, prepare a pdf or rtf document with the following sections:
+1. Student details: Student ID, Full name
+2. Unit details: Unit code and Name (SWE40006 Software Deployment and Evolution), semester,
+3. Due date (for feedback) and submission date
+4. Declaration of the task level attempted (P/C/D/HD)
+5. A report providing evidence of completion of the various sub-tasks. The evidence can include
+screen-shots (labelled with captions), pasted text from console windows and description of what
+you did and any errors/unresolved problems
+Notes: Where source code and/or script files have been provided DO NOT include these in the
+report. Binaries (executables) should not be submitted, but evidence of their successful
+compiling/building/deployment can be included as screen-shots or pasted console
+Each report must be submitted through the Canvas Submission portal before the due date.
+The submitted Reports will receive feedback and grades only once. There are no re-submissions/reassessments.
+Note: if you are aiming for level (C/P/D/HD) in a task. You have to work on that level and you can't be
+changing to submit another level after the due date. It is not acceptable. The feedback will be given
+on the current level you are aimed for the first time you submit the work by the due date.
+
+Deployment 1 rubric
+
+https://swinburnesarawak.instructure.com/courses/2068/assignments/37515?module_item_id=189092
+
+3/5
+
+3/19/26, 11:21 AM
+
+Deployment Portfolio Task 1 (10 Points)
+
+Criteria
+Analysing and
+investigating
+
+Ratings
+
+Pts
+
+4 Pts
+High
+
+3 Pts
+Distinction
+
+2 Pts
+Credit
+
+1 Pts
+Pass
+
+0 Pts
+No marks
+
+Distinction
+Analysed and
+
+Analysed and
+investigated
+
+Analysed and
+investigated
+
+Noted a few
+errors during
+
+No evidence
+provided for
+
+investigated
+errors in the
+Electron
+
+errors in the
+Electron
+console and
+
+errors in the
+Electron
+console but
+
+setup or
+packaging
+but did not
+
+criterion
+
+build/packaging
+process and
+
+provides a
+short
+
+did not
+provide
+
+investigate or
+explain them
+
+described
+clearly how all
+errors were
+
+summary of
+how errors
+were
+
+sufficient
+explanation
+of how they
+
+in depth.
+
+identified and
+resolved
+
+resolved.
+
+were
+resolved.
+
+4 pts
+
+Source
+
+4 Pts
+
+3 Pts
+
+2 Pts
+
+1 Pts
+
+0 Pts
+
+Coding and
+brief
+
+High Distinction
+
+Distinction
+
+Credit
+
+Pass
+
+No marks
+
+Successfully
+
+Successfully
+
+Successfully
+
+Successfully
+
+No
+
+deployed a React +
+Electron app with
+auto-update via
+
+packaged
+and
+published a
+
+built and
+packaged
+an original
+
+scaffolded,
+built, and
+packaged
+
+evidence
+provided
+for criterion
+
+electron-updater.
+Demonstrated full
+
+multicomponent
+
+React +
+Electron
+
+an Electron
++ React app
+
+update lifecycle
+(v1.0.0 → v1.1.0) with
+screenshots/recording
+
+React +
+Electron
+app as a
+
+app as a
+distributable
+installer with
+
+into a
+desktop
+installer.
+
+and a clear
+explanation of the
+
+versioned
+GitHub
+
+a custom
+icon and
+
+Screenshots
+of the
+
+implementation.
+
+Release
+with installer
+assets and
+
+app name.
+1–2 minor
+errors
+
+running app
+and installer
+provided.
+
+a public
+release link.
+
+present
+
+explanation
+
+Quality,
+Report writing
+skills, Spelling
+and grammar
+
+4 pts
+
+1 Pts
+High
+Distinction
+
+0.75 Pts
+Distinction
+
+0.5 Pts
+Credit
+
+0.25 Pts
+Pass
+
+0 Pts
+No marks
+
+Written report
+
+Written report
+
+Written report
+
+No evidence
+
+Written report
+with no
+spelling,
+
+with no
+spelling,
+grammar
+
+with minor
+spelling and
+grammar
+
+with major
+spelling and
+grammar
+
+provided for
+criterion
+
+grammar
+errors
+
+errors
+throughout
+
+errors
+throughout
+
+errors
+throughout
+
+throughout
+the text and
+has better
+
+the text with
+good quality
+content.
+
+the text.
+
+the text.
+
+https://swinburnesarawak.instructure.com/courses/2068/assignments/37515?module_item_id=189092
+
+1 pts
+
+4/5
+
+3/19/26, 11:21 AM
+
+Deployment Portfolio Task 1 (10 Points)
+
+Criteria
+Quality in
+Report
+structure
+(appropriate
+Headings/subheadings)
+
+Ratings
+quality
+content.
+1 Pts
+
+Pts
+
+0.75 Pts
+Distinction
+
+0.5 Pts
+Credit
+
+0.25 Pts
+Pass
+
+0 Pts
+No marks
+
+Ability to
+
+Ability to
+
+Does not has
+
+No evidence
+
+Ability to
+provide report
+structure in an
+
+provide report
+structure in an
+appropriate
+
+provide report
+structure in an
+appropriate
+
+an ability to
+provide report
+structure in an
+
+provided for
+criterion
+
+appropriate
+form and
+
+form with few
+explanations
+
+form
+
+appropriate
+form
+
+High
+Distinction
+
+1 pts
+
+proper
+explanations
+
+Total points: 10
+
+https://swinburnesarawak.instructure.com/courses/2068/assignments/37515?module_item_id=189092
+
+5/5
+
+
