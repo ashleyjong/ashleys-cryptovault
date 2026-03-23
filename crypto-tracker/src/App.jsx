@@ -62,7 +62,7 @@ function App() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           <h1>
             Ashley's CryptoVault
-            <span className="version-badge">v1.1.0</span>
+            <span className="version-badge">v1.2.0</span>
           </h1>
           <div className="theme-switch-wrapper">
             <span className="theme-icon material-symbols-outlined">light_mode</span>

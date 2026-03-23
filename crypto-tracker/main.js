@@ -35,6 +35,10 @@ function createWindow() {
   win.once('ready-to-show', () => {
     autoUpdater.checkForUpdatesAndNotify();
   });
+
+  autoUpdater.on('error', (err) => {
+    console.log('Update Error:', err);
+  });
 }
 
 app.whenReady().then(createWindow);
