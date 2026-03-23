@@ -8,6 +8,15 @@ function App() {
   const [loading, setLoading] = useState(true); 
   const [lastUpdated, setLastUpdated] = useState(null);
   const [error, setError] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('app-theme') || 'light');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [secondsLeft, setSecondsLeft] = useState(60);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('app-theme', newTheme);  
+  };
 
   const fetchCryptoData = async () => {
     setLoading(true); 
@@ -18,6 +27,7 @@ function App() {
       );
       setCoins(response.data);
       setLastUpdated(new Date().toLocaleTimeString());
+      setSecondsLeft(60); 
     } catch (err) {
       console.error("API Error:", err);
       setError(true);
@@ -32,20 +42,42 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSecondsLeft((prev) => (prev > 0 ? prev - 1 : 60));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const filteredCoins = coins.filter((coin) =>
+    coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="dashboard-container">
+    <div className={`dashboard-container ${theme}`}>
       <div className="bg-mesh"></div>
       
       <header className="header">
-        <h1>
-          Ashley's CryptoVault
-          <span className="version-badge">v1.0.0</span>
-        </h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+          <h1>
+            Ashley's CryptoVault
+            <span className="version-badge">v1.1.0</span>
+          </h1>
+          <div className="theme-switch-wrapper">
+            <span className="theme-icon material-symbols-outlined">light_mode</span>
+            <label className="theme-switch">
+              <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
+              <span className="slider round"></span>
+            </label>
+            <span className="theme-icon material-symbols-outlined">dark_mode</span>
+          </div>
+        </div>
         
         <div className="sync-container">
           <div className="last-sync-text">
-            <p className="sync-label">LAST SYNC</p>
-            <p className="sync-time">{lastUpdated || 'Never'}</p>
+            <p className="sync-label">LAST SYNC: {lastUpdated || 'Never'}</p>
+            <p className="sync-time" style={{ fontSize: '0.85rem', marginTop: '4px', color: 'var(--accent-color)' }}>Next update in: {secondsLeft}s</p>
           </div>
           <button 
             className="sync-btn"
@@ -85,11 +117,40 @@ function App() {
             </div>
           </div>
         ) : (
-          <div className="card-grid">
-            {coins.map(coin => (
-              <CryptoCard key={coin.id} coin={coin} />
-            ))}
-          </div>
+          <>
+            <div className="search-container">
+              <input
+                type="text"
+                placeholder="Search for a coin..."
+                className="search-input"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+            <div className="card-grid">
+              {filteredCoins.length > 0 ? (
+                filteredCoins.map((coin) => (
+                  <CryptoCard key={coin.id} coin={coin} />
+                ))
+              ) : (
+                <div className="empty-state" style={{ gridColumn: '1 / -1', height: '30vh' }}>
+                  <div className="empty-card" style={{ padding: '3rem' }}>
+                    <h3 style={{ color: 'var(--text-primary)', marginTop: 0 }}>No coins found</h3>
+                    <p style={{ color: 'var(--text-secondary)', marginBottom: '20px' }}>
+                      We couldn't find any coins matching "{searchTerm}"
+                    </p>
+                    <button 
+                      className="sync-btn" 
+                      onClick={() => setSearchTerm('')}
+                      style={{ padding: '8px 20px', margin: '0 auto' }}
+                    >
+                      Clear Search
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </>
         )}
       </div>
 

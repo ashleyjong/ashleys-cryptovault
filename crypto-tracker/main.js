@@ -14,8 +14,13 @@ function createWindow() {
     },
   });
 
-  const isDev = true;
-  const startUrl = 'http://localhost:5173';
+  const isDev = !app.isPackaged;
+
+  if (isDev) {
+    win.loadURL('http://localhost:5173');
+  } else {
+    win.loadFile(path.join(__dirname, 'dist', 'index.html'));
+  }
 
   win.loadURL(startUrl);
 
